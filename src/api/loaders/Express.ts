@@ -5,5 +5,5 @@ export default async () => {
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
-    app.use("/", routers);
+    app.use("/api", routers);
 };
