@@ -1,7 +1,7 @@
 import mysql from "mysql2";
 import { mysqlConfig } from "../config/config";
 
-const connection = {
+const connection: object = {
     mysqlConfig,
     connectionLimit: 30
 };
