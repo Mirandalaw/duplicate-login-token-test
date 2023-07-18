@@ -1,12 +1,21 @@
-import UserDao from "../user/Dao/UserDao";
+export const userService = () => {
+    let userRepository;
 
-class UserService {
-    constructor(UserDao: Object) {
-        UserDao = this.UserDao;
+    function setUserReposittory(newUserRepository) {
+        userRepository = newUserRepository;
     }
-
-    async getUsers(query: string) {
-        const user = UserDao;
+    async function insertUser(data) {
+        const user = await userRepository.insertOne(data);
         return user;
     }
-}
+
+    async function getAll() {
+        return await userRepository.get();
+    }
+
+    return {
+        userRepository,
+        insertUser,
+        getAll
+    };
+};
