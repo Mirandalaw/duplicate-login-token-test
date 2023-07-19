@@ -4,6 +4,7 @@ export const userService = () => {
     function setUserReposittory(newUserRepository) {
         userRepository = newUserRepository;
     }
+
     async function insertUser(data) {
         const user = await userRepository.insertOne(data);
         return user;

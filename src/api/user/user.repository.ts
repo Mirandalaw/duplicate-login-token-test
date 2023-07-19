@@ -1,5 +1,11 @@
-import loaders from "../loaders/Express";
+import db from "../loaders/db";
 
-(async function () {
-    await loaders();
-})();
+export const userRepository = () => {
+    let userDao;
+
+    function setUserDao(newUserDao) {
+        userDao = newUserDao;
+    }
+
+    async function get(data: String) {}
+};
