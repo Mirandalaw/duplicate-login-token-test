@@ -44,15 +44,17 @@ module.exports = {
     }
   },
 
-  // autoLogin: async (data) => {
-  //   try {
-  //     const accessToken = data.headers.authorization.split("Bearer ")[1];
-  //     if (!accessToken) return null;
-  //     const accessTokenInfo = jwt.verify(accessToken);
-  //
-  //     if (accessTokenInfo === TOKEN_EXPIRED) return;
-  //   } catch (err) {}
-  // },
+  autoLogin: async (data) => {
+    try {
+      const accessToken = data.headers.authorization.split("Bearer ")[1];
+      if (!accessToken) return null;
+      const accessTokenInfo = jwt.verify(accessToken);
+
+      if (accessTokenInfo === TOKEN_EXPIRED) return;
+    } catch (err) {
+      console.error("autoLogin Error : ", err);
+    }
+  },
 
   verifyToken: async (reqData) => {
     try {
