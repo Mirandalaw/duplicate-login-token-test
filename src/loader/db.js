@@ -32,6 +32,7 @@ module.exports = {
     return pool.release(connection);
   },
 
+
   // 트랜잭션 시작
   beginTransaction: async function (connection) {
     try {
